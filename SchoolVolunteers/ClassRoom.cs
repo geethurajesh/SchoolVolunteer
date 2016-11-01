@@ -19,16 +19,16 @@ namespace SchoolVolunteers
         public int NumberOfKids { get; set; }
         #endregion
 
-        #region Db connection Properties
-        [ForeignKey("Teacher")]
-        public int TeacherID { get; set; }
+        //#region Db connection Properties
+        //[ForeignKey("Teacher")]
+        //public int TeacherID { get; set; }
 
-        public virtual Teacher Teacher { get; set; }
+        //public virtual Teacher Teacher { get; set; }
 
-        [ForeignKey("Volunteer")]
-        public int VolunteerID { get; set; }
+        //[ForeignKey("Volunteer")]
+        //public int VolunteerID { get; set; }
 
-        public virtual Volunteer volunteer { get; set; }
-        #endregion
+        //public virtual Volunteer volunteer { get; set; }
+        //#endregion
     }
 }

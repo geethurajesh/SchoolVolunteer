@@ -20,7 +20,7 @@ namespace SchoolVolunteers
         public static int TeachersLName { get; set; }
         //public string Kids { get; set; }
 
-       
+
         #endregion
 
         #region Methods
@@ -29,8 +29,8 @@ namespace SchoolVolunteers
         /// </summary>
         /// <param name="family"></param>
         /// 
-
-        public static void AddFamily(Family family, Volunteer volunteer,Teacher Teacher, ClassRoom classroom)
+#region methods for Family
+        public static void AddFamily(Family family, Volunteer volunteer, ClassRoom classroom)
         {
             using (var Model = new SchoolVolunteerModel())
             {
@@ -38,7 +38,7 @@ namespace SchoolVolunteers
                 //"using " is used to end the scope of the Datebase (closing the db)
                 Model.Families.Add(family);
                 Model.Volunteers.Add(volunteer);
-                Model.Teachers.Add(Teacher);
+               // Model.Teachers.Add(Teacher);
                 Model.ClassRoom.Add(classroom);
                 Model.SaveChanges();
             }//by this time the database connection is terminated
@@ -60,5 +60,19 @@ namespace SchoolVolunteers
             }
         }
         #endregion
+
+        #region Methods for Teachers
+
+        public static void AddTeachers( Teacher Teacher)
+        {
+            using (var Model = new SchoolVolunteerModel())
+            {
+                Model.Teachers.Add(Teacher);
+                
+                Model.SaveChanges();    // database connection terminated
+            }
+        }
+        #endregion
+
     }
 }

@@ -13,19 +13,14 @@ namespace SchoolVolunteers
         [Key]
         public int VolunteerId { get; set; }
         public char Volunteering { get; set; }
-        //  public virtual ICollection<Family> Families { get; set; }
 
-
-
-
-        [ForeignKey("Family")]
-        public int FamilyId { get; set; }
-        //we need the id to have acces to the volunteer id
-        public virtual Family Family { get; set; }
-        //physically creating a relationship between the tables
-
+        public virtual ICollection<Family> Families { get; set; }
         public virtual ICollection<Teacher> Teachers { get; set; }
 
-
+        //[ForeignKey("Family")]
+        //public int FamilyId { get; set; }
+        ////we need the id to have acces to the volunteer id
+        //public virtual Family Family { get; set; }
+        ////physically creating a relationship between the tables
     }
 }

@@ -22,12 +22,16 @@ namespace SchoolVolunteers
 
         public string TeacherFirstName { get; set; }
 
-       // public string TeacherLastName { get; set; }
+        // public string TeacherLastName { get; set; }
+
+        [ForeignKey("Volunteer")]
+        public int VolunteerId { get; set; }
+        ////we need the id to have acces to the volunteer id
+        public virtual Volunteer Volunteer { get; set; }
+        ////physically creating a relationship between the tables
 
 
 
-
-        public virtual ICollection<ClassRoom> Classrooms { get; set; }
 
 
 
